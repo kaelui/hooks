@@ -1,18 +1,21 @@
-# Hooks
-
-A collection of reusable React hooks for building modern web applications.
-
-## Overview
+# React Hooks
 
 This library provides a set of custom React hooks that help simplify common patterns and interactions in React applications. These hooks aim to improve code reusability, readability, and maintainability.
 
-## Installation
+## 📦 Install
 
 ```bash
 pnpm add @kaelui/hooks
 ```
 
-## Creating a New Hook
+## 🪝 Available Hooks
+
+- [useDisclosure](https://kaelui.github.io/hooks/?path=/docs/usedisclosure--docs/): manages disclosure state (open/closed).
+- [useResizeObserver](https://kaelui.github.io/hooks/?path=/docs/useresizeobserver--docs/): uses `ResizeObserver` to track changes in element dimensions.
+
+## 🧑🏽‍💻 Development
+
+### Creating a New Hook
 
 To create a new hook with all the required files, run:
 
@@ -21,11 +24,6 @@ pnpm create-hook
 ```
 
 This will prompt you for a hook name and description, then automatically generate necessary files.
-
-## Available Hooks
-
-<!-- HOOKS_START -->
-<!-- HOOKS_END -->
 
 ## License
 

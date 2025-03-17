@@ -1,0 +1,56 @@
+import { Canvas, Meta } from "@storybook/blocks";
+
+import * as useResizeObserverStory from "./useResizeObserver.stories";
+
+<Meta of={useResizeObserverStory} />
+
+# `useResizeObserver`
+
+Tracks element size and position changes with ResizeObserver.
+
+## Features
+
+- Monitors element dimensions and position in real-time
+- Uses the native ResizeObserver API for efficient change detection
+- Returns both a ref to attach to the element and its current dimensions
+- Handles cleanup automatically to prevent memory leaks
+- Debounces updates using `requestAnimationFrame` for performance
+
+## Parameters
+
+- `options` (optional): ResizeObserver configuration options
+
+## Returns
+
+The hook returns a tuple containing:
+
+1. A React ref object to attach to the element you want to observe
+2. An object with the current dimensions of the observed element (x, y, width, height, top, right, bottom, left)
+
+## Example Usage
+
+```jsx
+function Example() {
+  const [ref, rect] = useResizeObserver();
+
+  return (
+    <div
+      ref={ref}
+      style={{
+        border: "1px solid #ccc",
+        resize: "both",
+        overflow: "auto",
+        padding: "20px",
+      }}
+    >
+      <p>Resize this box using the corner handle</p>
+      <p>
+        Current dimensions: {rect.width.toFixed(0)}px × {rect.height.toFixed(0)}
+        px
+      </p>
+    </div>
+  );
+}
+```
+
+<Canvas of={useResizeObserverStory.Primary} />
