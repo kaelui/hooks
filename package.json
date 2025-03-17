@@ -1,6 +1,6 @@
 {
   "name": "@kaelui/hooks",
-  "version": "0.0.4",
+  "version": "0.0.0",
   "description": "React hooks library with native browser testing and granular tree-shakable export.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -48,7 +48,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mikaelbalin/hooks.git"
+    "url": "git+https://github.com/kaelui/hooks.git"
   },
   "publishConfig": {
     "access": "public"
