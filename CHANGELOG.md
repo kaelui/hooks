@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.0.7 - 2025-03-17
+
+### 🧰 Tooling
+
+- ci: add artifact upload and download steps in workflows - [Commit](https://github.com/mikaelbalin/hooks/commit/64949f26a79b7b4e7f5340b7d72405af14dd6c57)
+
 ## 0.0.6 - 2025-03-17
 
 ### 🐛 Fixes
