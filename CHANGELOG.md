@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.0.6 - 2025-03-17
+
+### 🐛 Fixes
+
+- fix: update label patterns to include 'docs' for consistency - [Commit](https://github.com/mikaelbalin/hooks/commit/a52a776ed8b506834a30705a5ff3b59b04995b43)
+
+### 📝 Documentation
+
+- docs: update changelog to include version history and feature details - [Commit](https://github.com/mikaelbalin/hooks/commit/3c1ca5b8a336b8a4e4146cb5aef6917f5a22d580)
+
 ## 0.0.5 - 2025-03-17
 
 ### 🔧 Maintenance
