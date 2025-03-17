@@ -95,7 +95,7 @@ jobs:
               },
               "template": "#{{CHANGELOG}}",
               "pr_template": "- #{{TITLE}} - [PR](#{{URL}})",
-              "commit_template": "- #{{TITLE}} - [Commit](https://github.com/mikaelbalin/hooks/commit/#{{MERGE_SHA}})",
+              "commit_template": "- #{{TITLE}} - [Commit](https://github.com/kaelui/hooks/commit/#{{MERGE_SHA}})",
               "empty_template": "- No changes"
             }
           mode: "HYBRID"
