@@ -18,12 +18,13 @@
     },
     "./package.json": "./package.json"
   },
-  "files": [
-    "dist",
-    "README.md",
-    "LICENSE",
-    "CHANGELOG.md"
-  ],
+  "imports": {
+    "#*": [
+      "./src/*",
+      "./src/*.ts",
+      "./src/*/index.ts"
+    ]
+  },
   "scripts": {
     "dev": "storybook dev -p 6006",
     "build": "tsup",
@@ -39,6 +40,12 @@
     "preversion": "pnpm test:run && pnpm build",
     "postversion": "git push && git push --tags"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "keywords": [
     "typescript",
     "react",

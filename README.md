@@ -12,6 +12,7 @@ pnpm add @kaelui/hooks
 
 - [useDisclosure](https://kaelui.github.io/hooks/?path=/docs/usedisclosure--docs/): manages disclosure state (open/closed).
 - [useResizeObserver](https://kaelui.github.io/hooks/?path=/docs/useresizeobserver--docs/): uses `ResizeObserver` to track changes in element dimensions.
+- [useMediaQuery](https://kaelui.github.io/hooks/?path=/docs/usemediaquery--docs/): subscribe and respond to media query changes.
 
 ## 🧑🏽‍💻 Development
 

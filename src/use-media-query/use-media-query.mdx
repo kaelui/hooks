@@ -1,0 +1,53 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as useMediaQueryStory from "./use-media-query.stories";
+
+<Meta of={useMediaQueryStory} />
+
+# `useMediaQuery`
+
+A React hook that subscribes to media query changes and returns whether the query matches.
+
+## Features
+
+- Efficiently detects and responds to media query changes
+- Works in SSR environments (returns default values when not in browser)
+- Configurable initial value handling
+- Clean subscription management with automatic cleanup
+
+## Parameters
+
+- `query` (required): A valid CSS media query string (e.g., `"(min-width: 768px)"`)
+- `initialValue` (optional): Boolean default value to use when the media query cannot be evaluated
+- `options` (optional): Configuration object with the following properties:
+  - `getInitialValueInEffect` (default: `true`): When `true`, initial value is set in an effect
+
+## Returns
+
+- `boolean`: `true` if the media query matches, otherwise `false`
+
+## Example Usage
+
+```jsx
+function Example() {
+  // Check if viewport is at least 768px wide
+  const isDesktop = useMediaQuery("(min-width: 768px)");
+
+  // With initial value
+  const isPrefersDark = useMediaQuery("(prefers-color-scheme: dark)", false);
+
+  // With custom options
+  const isLandscape = useMediaQuery("(orientation: landscape)", false, {
+    getInitialValueInEffect: false,
+  });
+
+  return (
+    <div>
+      <p>Is desktop: {isDesktop ? "Yes" : "No"}</p>
+      <p>Prefers dark: {isPrefersDark ? "Yes" : "No"}</p>
+      <p>Is landscape: {isLandscape ? "Yes" : "No"}</p>
+    </div>
+  );
+}
+```
+
+<Canvas of={useMediaQueryStory.Primary} />
