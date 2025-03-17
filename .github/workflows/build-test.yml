@@ -55,3 +55,10 @@ jobs:
         env:
           CI: true
           NODE_ENV: test
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+          retention-days: 1

@@ -32,6 +32,12 @@ jobs:
       # We don't need to install dependencies since we're only publishing
       # the pre-built artifacts created in the build-test job
 
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
       - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
