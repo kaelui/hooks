@@ -1,10 +1,12 @@
 /**
  * Generates an index file template that exports the hook
  *
- * @param {string} hookName - The name of the hook to export
+ * @param {string} hookDirName - The name of the hook to export
  * @returns {string} The generated index file content
  */
-export const getIndexTemplate = (hookName) => `export * from "./${hookName}";
+export const getIndexTemplate = (
+  hookDirName
+) => `export * from "./${hookDirName}";
 `;
 
 /**
@@ -14,12 +16,7 @@ export const getIndexTemplate = (hookName) => `export * from "./${hookName}";
  * @param {string} description - The description of the hook's functionality
  * @returns {string} The generated hook file content
  */
-export const getHookTemplate = (
-  hookName,
-  description
-) => `import { useState } from "react";
-
-/**
+export const getHookTemplate = (hookName, description) => `/**
  * ${description}
  *
  * @returns The ${hookName} functionality
@@ -28,14 +25,7 @@ export const getHookTemplate = (
  * const result = ${hookName}();
  */
 export function ${hookName}() {
-  const [state, setState] = useState(null);
-  
   // Add your hook logic here
-  
-  return {
-    state,
-    setState
-  };
 }
 `;
 
@@ -43,15 +33,17 @@ export function ${hookName}() {
  * Generates a test file template for a React hook
  *
  * @param {string} hookName - The name of the hook to test
+ * @param {string} hookDirName - The name of the hook directory
  * @returns {string} The generated test file content
  */
 export const getTestTemplate = (
-  hookName
-) => `import { renderHook, act } from "@testing-library/react";
-import { ${hookName} } from "./${hookName}";
+  hookName,
+  hookDirName
+) => `import { renderHook } from "@testing-library/react";
+import { ${hookName} } from "./${hookDirName}";
 
 describe("${hookName}", () => {
-  it("should initialize correctly", () => {
+  it("should do something correctly", () => {
     const { result } = renderHook(() => ${hookName}());
     
     expect(result.current).toBeDefined();
@@ -66,17 +58,17 @@ describe("${hookName}", () => {
  * Generates a Storybook story template for a React hook
  *
  * @param {string} hookName - The name of the hook
- * @param {string} hookTitle - The title to display in Storybook
+ * @param {string} hookDirName - The name of the hook directory
  * @returns {string} The generated story file content
  */
 export const getStoryTemplate = (
   hookName,
-  hookTitle
+  hookDirName
 ) => `import type { Meta, StoryObj } from "@storybook/react";
-import { ${hookName} } from "./${hookName}";
+import { ${hookName} } from "./${hookDirName}";
 
 const meta = {
-  title: "${hookTitle}",
+  title: "${hookName}",
 } satisfies Meta;
 
 export default meta;
@@ -88,7 +80,6 @@ export const Primary: Story = {
 
     return (
       <div>
-        <h2>${hookTitle} Example</h2>
         {/* Add your story content here */}
         <pre>{JSON.stringify(result, null, 2)}</pre>
       </div>
@@ -102,14 +93,15 @@ export const Primary: Story = {
  *
  * @param {string} hookName - The name of the hook
  * @param {string} description - The description of the hook's functionality
+ * @param {string} hookDirName - The name of the hook directory
  * @returns {string} The generated MDX documentation content
  */
 export const getMdxTemplate = (
   hookName,
-  description
+  description,
+  hookDirName
 ) => `import { Canvas, Meta } from "@storybook/blocks";
-
-import * as ${hookName}Story from "./${hookName}.stories";
+import * as ${hookName}Story from "./${hookDirName}.stories";
 
 <Meta of={${hookName}Story} />
 

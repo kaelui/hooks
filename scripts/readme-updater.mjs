@@ -7,10 +7,10 @@ import ora from "ora";
  *
  * @param {string} readmePath - Path to the README.md file
  * @param {string} hookName - Name of the hook
- * @param {string} hookTitle - Title-cased hook name
+ * @param {string} description - short description of the hook
  * @returns {Promise<void>}
  */
-export async function updateReadme(readmePath, hookName, hookTitle) {
+export async function updateReadme(readmePath, hookName, description) {
   const spinner = ora(
     `Updating README.md with ${chalk.cyan(hookName)}`
   ).start();
@@ -18,34 +18,36 @@ export async function updateReadme(readmePath, hookName, hookTitle) {
   try {
     const readme = fs.readFileSync(readmePath, "utf8");
 
-    // Use HTML comment markers to find where to insert the hook
-    const hooksStartMarker = "<!-- HOOKS_START -->";
-    const hooksEndMarker = "<!-- HOOKS_END -->";
+    const hookEntry = `- [${hookName}](https://kaelui.github.io/hooks/?path=/docs/${hookName.toLowerCase()}--docs/): ${description}.`;
 
-    const hookEntry = `
-### ${hookTitle}
+    // Find the Available Hooks section
+    const availableHooksSection = "## 🪝 Available Hooks";
+    // Pattern to find the next section heading (starts with ## and optional space)
+    const nextSectionPattern = /\n## /;
 
-A React hook that ${hookName.replace("use", "").toLowerCase()}s.
-
-- [Source](./src/${hookName}/${hookName}.ts)
-- [Documentation & Examples](https://kaelui-hooks.netlify.app/?path=/docs/${hookName.toLowerCase()})
-`;
-
-    // Check if the markers exist
-    if (
-      !readme.includes(hooksStartMarker) ||
-      !readme.includes(hooksEndMarker)
-    ) {
-      spinner.fail(`Could not find hook section markers in README.md`);
-      return;
+    const hooksStartIndex = readme.indexOf(availableHooksSection);
+    if (hooksStartIndex === -1) {
+      throw new Error("Could not find Available Hooks section in README");
     }
 
-    // Split the README into sections using the markers
-    const [beforeHooksSection, rest] = readme.split(hooksStartMarker);
-    const [currentHooksContent, afterHooksSection] = rest.split(hooksEndMarker);
+    // Find the next section to determine where Available Hooks section ends
+    const nextSectionMatch = nextSectionPattern.exec(
+      readme.substring(hooksStartIndex + availableHooksSection.length)
+    );
+    const nextSectionIndex = nextSectionMatch
+      ? hooksStartIndex + availableHooksSection.length + nextSectionMatch.index
+      : readme.length;
 
-    // Add the new hook entry and reconstruct the README
-    const updatedReadme = `${beforeHooksSection}${hooksStartMarker}${currentHooksContent}${hookEntry}${hooksEndMarker}${afterHooksSection}`;
+    // Split the README into before, hooks section, and after
+    const readmeStart = readme.substring(0, hooksStartIndex);
+    const hooksSection = readme.substring(hooksStartIndex, nextSectionIndex);
+    const readmeEnd = readme.substring(nextSectionIndex);
+
+    // Add the new hook to the end of the hooks section
+    const updatedHooksSection = hooksSection.trim() + "\n" + hookEntry + "\n";
+
+    // Combine the parts
+    const updatedReadme = readmeStart + updatedHooksSection + readmeEnd;
 
     fs.writeFileSync(readmePath, updatedReadme);
     spinner.succeed(`Updated README.md with ${chalk.cyan(hookName)}`);
