@@ -15,5 +15,6 @@ export default defineConfig({
       headless: true,
       screenshotFailures: false,
     },
+    includeTaskLocation: true,
   },
 });
