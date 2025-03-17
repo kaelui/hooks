@@ -1,6 +1,6 @@
 import { renderHook, act } from "@testing-library/react";
 import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
-import { useResizeObserver, useElementSize } from "./useResizeObserver";
+import { useResizeObserver, useElementSize } from "./use-resize-observer";
 
 describe("useResizeObserver", () => {
   let testElement: HTMLDivElement;

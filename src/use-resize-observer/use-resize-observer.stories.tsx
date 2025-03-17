@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { useResizeObserver } from "./useResizeObserver";
+import { useResizeObserver } from "./use-resize-observer";
 
 const meta = {
   title: "useResizeObserver",
