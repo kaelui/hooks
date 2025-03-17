@@ -14,11 +14,9 @@ jobs:
   publish:
     needs: build-test
     runs-on: ubuntu-latest
-    # Set to false to temporarily disable this job
-    if: false
     permissions:
       contents: read
-      packages: read
+      packages: write # allow GITHUB_TOKEN to publish packages
 
     steps:
       - uses: actions/checkout@v4
@@ -29,12 +27,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          registry-url: "https://registry.npmjs.org"
 
       # We don't need to install dependencies since we're only publishing
       # the pre-built artifacts created in the build-test job
 
-      - name: Publish to npm
-        run: npm publish --access=public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - uses: JS-DevTools/npm-publish@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          registry: "https://npm.pkg.github.com"
