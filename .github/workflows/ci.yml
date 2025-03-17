@@ -1,0 +1,14 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    if: "${{ !startsWith(github.ref, 'refs/tags/') && !contains(github.event.head_commit.message, 'chore: release v') }}"
+    uses: ./.github/workflows/build-test.yml
+    with:
+      lint: true

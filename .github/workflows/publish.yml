@@ -1,0 +1,40 @@
+name: Publish Package
+
+on:
+  repository_dispatch:
+    types: [release-created]
+
+jobs:
+  build-test:
+    uses: ./.github/workflows/build-test.yml
+    with:
+      test: false
+      ref: ${{ github.event.client_payload.ref }}
+
+  publish:
+    needs: build-test
+    runs-on: ubuntu-latest
+    # Set to false to temporarily disable this job
+    if: false
+    permissions:
+      contents: read
+      packages: read
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.client_payload.ref }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+
+      # We don't need to install dependencies since we're only publishing
+      # the pre-built artifacts created in the build-test job
+
+      - name: Publish to npm
+        run: npm publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
