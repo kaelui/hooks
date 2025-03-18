@@ -7,6 +7,12 @@ export default defineConfig({
       provider: "istanbul",
       reporter: ["html", "lcov", "text", "json"],
       include: ["src"],
+      exclude: [
+        "**/*.test.ts",
+        "**/*.spec.ts",
+        "**/*.stories.*",
+        "**/*.story.*",
+      ],
     },
     browser: {
       enabled: true,
