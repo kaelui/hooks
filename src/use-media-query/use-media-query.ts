@@ -1,5 +1,5 @@
-import { isBrowser } from "#util/isBrowser";
 import { useEffect, useRef, useState } from "react";
+import { isBrowser } from "#util/isBrowser";
 
 export interface UseMediaQueryOptions {
   getInitialValueInEffect: boolean;
