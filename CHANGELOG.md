@@ -1,5 +1,29 @@
 # Changelog
 
+## 0.1.0 - 2025-03-18
+
+### 🚀 Features
+
+- feat: update imports for consistency - [Commit](https://github.com/kaelui/hooks/commit/c3ab833b8560472ae13b12b1264f9ee77e8c5200)
+- feat: update README with CI badges and add documentation for isBrowser utility - [Commit](https://github.com/kaelui/hooks/commit/880534d643800fea608ea71f53351d9d15d0cf06)
+- feat: add useMediaQuery hook for media query detection and update README - [Commit](https://github.com/kaelui/hooks/commit/3a0f803898fdc9e33a2e5b005a88e40ba95037d9)
+- feat: enhance hook creation script with kebab-case conversion and improved README updates - [Commit](https://github.com/kaelui/hooks/commit/2e711c75149831691abfcec79f6baa5718a2614e)
+- feat: export useResizeObserver from index file - [Commit](https://github.com/kaelui/hooks/commit/8ecdd2a37b4d8bb28b8a32075d1189803b482f66)
+- feat: add useResizeObserver hook for tracking element size changes - [Commit](https://github.com/kaelui/hooks/commit/ca096c175deb095db4ccdb18046b67d8110c2c6c)
+- feat: add @vitest/ui dependency and update vitest configuration - [Commit](https://github.com/kaelui/hooks/commit/774c5720ee5f7cedb46dc83a30118c83fd576ba9)
+
+### 🐛 Fixes
+
+- fix: update commit template URLs to reflect new repository ownership - [Commit](https://github.com/kaelui/hooks/commit/bc6ee64af9057c837db02a3c22941e6df791a34d)
+
+### 🧪 Tests
+
+- test: enhance useDisclosure tests with onOpen and onClose callbacks - [Commit](https://github.com/kaelui/hooks/commit/588ec8bc83f56871c7858268c3b02fa57a90fd0d)
+
+### 🧰 Tooling
+
+- refactor: rename useResizeObserver files for consistency - [Commit](https://github.com/kaelui/hooks/commit/9ce79529c3e0aded8974fdfefa73cad9dd7fa329)
+
 ## 0.0.7 - 2025-03-17
 
 ### 🧰 Tooling
