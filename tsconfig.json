@@ -18,7 +18,11 @@
     "types": ["vitest/globals", "@vitest/browser/providers/playwright"],
     "allowJs": true,
     "checkJs": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "#*": ["./src/*"]
+    }
   },
   "include": ["src", "scripts"]
 }
