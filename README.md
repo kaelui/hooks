@@ -2,6 +2,7 @@
 
 [![CI](https://github.com/kaelui/hooks/actions/workflows/ci.yml/badge.svg)](https://github.com/kaelui/hooks/actions/workflows/ci.yml)
 [![Deploy Storybook](https://github.com/kaelui/hooks/actions/workflows/deploy-storybook.yml/badge.svg)](https://github.com/kaelui/hooks/actions/workflows/deploy-storybook.yml)
+[![codecov](https://codecov.io/gh/kaelui/hooks/branch/main/graph/badge.svg)](https://codecov.io/gh/kaelui/hooks)
 
 This library provides a set of custom React hooks that help simplify common patterns and interactions in React applications. These hooks aim to improve code reusability, readability, and maintainability.
 
