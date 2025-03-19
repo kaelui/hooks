@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.2.0 - 2025-03-19
+
+### 🚀 Features
+
+- feat: add useMounted hook to track component mount status and update documentation - [Commit](https://github.com/kaelui/hooks/commit/465e65ef2123f9eb2cce342b734897b20cee81ce)
+- feat: update Storybook dev port and enhance useMediaQuery initial value logic - [Commit](https://github.com/kaelui/hooks/commit/bfdad3eaf9d059f34f13cde6c65d7548015419e4)
+- feat: update Storybook configuration and scripts for improved development experience - [Commit](https://github.com/kaelui/hooks/commit/d05d34e9d06b1db2ff656b1837fdcf1bb8b5b74d)
+- feat: update vitest configuration to exclude test and story files from coverage - [Commit](https://github.com/kaelui/hooks/commit/ccbc6ddb9a075e2d750f5a2b3724b28ca0e17dc3)
+- feat: add Codecov badge to README for coverage tracking - [Commit](https://github.com/kaelui/hooks/commit/58dbbff2c2bef52760a3e7b02e6945c4d4eb65a1)
+- feat: add Playwright browser installation step in CI workflow - [Commit](https://github.com/kaelui/hooks/commit/2c10039d53a7911344227174dbdbfbcee9393277)
+- feat: enhance CI workflow with coverage reporting and update pnpm version - [Commit](https://github.com/kaelui/hooks/commit/b7e15733217fdcb95f7b54277cc8bdda04e6de8f)
+
+### 🔧 Maintenance
+
+- chore: remove pnpm version specification in CI workflows - [Commit](https://github.com/kaelui/hooks/commit/e4690f7adaa28d255164a4b540ae04ba361e4771)
+- chore: update vitest configuration and upgrade Storybook and Vitest dependencies - [Commit](https://github.com/kaelui/hooks/commit/a809a9a157a20daeb4df2309b6344f98f268f7ae)
+
 ## 0.1.0 - 2025-03-18
 
 ### 🚀 Features
