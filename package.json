@@ -26,7 +26,7 @@
     ]
   },
   "scripts": {
-    "dev": "storybook dev -p 6007",
+    "dev": "storybook dev -p 6008",
     "build": "tsup",
     "build:storybook": "storybook build",
     "lint": "eslint --ext .ts,.tsx src",
