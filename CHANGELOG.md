@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.1 - 2025-03-19
+
+### 🚀 Features
+
+- feat: add useMounted hook export to index - [Commit](https://github.com/kaelui/hooks/commit/1449624f584377c4285484547e357242578b1257)
+
+### 🧪 Tests
+
+- test: enhance useResizeObserver tests for reliability and clarity - [Commit](https://github.com/kaelui/hooks/commit/c9f0f6f22f163b96af856a2d9d27220a73e95602)
+- test: improve useResizeObserver tests for clarity and accuracy - [Commit](https://github.com/kaelui/hooks/commit/0fc740263a38caf7045c1b148ad8b3e653270d62)
+
 ## 0.2.0 - 2025-03-19
 
 ### 🚀 Features
