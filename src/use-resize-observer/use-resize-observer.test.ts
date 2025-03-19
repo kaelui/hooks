@@ -38,7 +38,7 @@ describe("useResizeObserver", () => {
   it("should observe element when ref is set", async () => {
     const { result, rerender } = renderHook(() => useResizeObserver());
 
-    // Manually set the ref to our test element
+    // Manually set the ref to test element
     act(() => {
       result.current[0].current = testElement;
     });
@@ -48,12 +48,12 @@ describe("useResizeObserver", () => {
     // Wrap the waiting and state updates in act
     await act(async () => {
       // Wait for ResizeObserver to trigger
-      await new Promise((resolve) => setTimeout(resolve, 50));
+      await new Promise((resolve) => setTimeout(resolve, 100));
     });
 
-    // Check if our hook captures some dimensions (they may not match exactly due to browser differences)
-    expect(result.current[1].width).toBeGreaterThan(0);
-    expect(result.current[1].height).toBeGreaterThan(0);
+    // Check dimensions match what we set (or are at least detected)
+    expect(result.current[1].width).toBeGreaterThanOrEqual(50); // At least half of what we set
+    expect(result.current[1].height).toBeGreaterThanOrEqual(50); // At least half of what we set
   });
 
   it("should detect size changes", async () => {
