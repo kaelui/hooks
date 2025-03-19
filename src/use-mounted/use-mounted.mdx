@@ -1,0 +1,31 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as useMountedStory from "./use-mounted.stories";
+
+<Meta of={useMountedStory} />
+
+# `useMounted`
+
+Indicates whether a component has mounted to the DOM, returning `true` after mounting and `false` during the initial render.
+
+## Features
+
+- Detects when a component has mounted to the DOM
+- Helps prevent hydration mismatches in server-side rendering contexts
+- Allows for conditional rendering of client-side only content
+- Zero dependencies beyond React's built-in hooks
+
+## Returns
+
+`boolean` - Returns `false` initially and `true` once the component has mounted.
+
+## Example Usage
+
+```jsx
+function Example() {
+  const isMounted = useMounted();
+
+  return <div>{isMounted && <ClientOnlyComponent />}</div>;
+}
+```
+
+<Canvas of={useMountedStory.Primary} />
