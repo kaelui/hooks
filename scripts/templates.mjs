@@ -33,14 +33,12 @@ export function ${hookName}() {
  * Generates a test file template for a React hook
  *
  * @param {string} hookName - The name of the hook to test
- * @param {string} hookDirName - The name of the hook directory
  * @returns {string} The generated test file content
  */
 export const getTestTemplate = (
-  hookName,
-  hookDirName
+  hookName
 ) => `import { renderHook } from "@testing-library/react";
-import { ${hookName} } from "./${hookDirName}";
+import { ${hookName} } from "./${hookName}";
 
 describe("${hookName}", () => {
   it("should do something correctly", () => {
@@ -58,14 +56,12 @@ describe("${hookName}", () => {
  * Generates a Storybook story template for a React hook
  *
  * @param {string} hookName - The name of the hook
- * @param {string} hookDirName - The name of the hook directory
  * @returns {string} The generated story file content
  */
 export const getStoryTemplate = (
-  hookName,
-  hookDirName
+  hookName
 ) => `import type { Meta, StoryObj } from "@storybook/react";
-import { ${hookName} } from "./${hookDirName}";
+import { ${hookName} } from "./${hookName}";
 
 const meta = {
   title: "${hookName}",
@@ -93,15 +89,13 @@ export const Primary: Story = {
  *
  * @param {string} hookName - The name of the hook
  * @param {string} description - The description of the hook's functionality
- * @param {string} hookDirName - The name of the hook directory
  * @returns {string} The generated MDX documentation content
  */
 export const getMdxTemplate = (
   hookName,
-  description,
-  hookDirName
+  description
 ) => `import { Canvas, Meta } from "@storybook/blocks";
-import * as ${hookName}Story from "./${hookDirName}.stories";
+import * as ${hookName}Story from "./${hookName}.stories";
 
 <Meta of={${hookName}Story} />
 

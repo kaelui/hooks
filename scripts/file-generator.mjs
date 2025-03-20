@@ -26,16 +26,10 @@ export function createDirIfNotExists(dirPath) {
  *
  * @param {string} hookDir - Directory where hook files will be created
  * @param {string} hookName - Name of the hook
- * @param {string} hookDirName - Name of the hook file
  * @param {string} description - Description of the hook
  * @returns {Promise<void>}
  */
-export async function generateHookFiles(
-  hookDir,
-  hookName,
-  hookDirName,
-  description
-) {
+export async function generateHookFiles(hookDir, hookName, description) {
   const mainSpinner = ora(
     `Generating ${chalk.cyan(hookName)} files...`
   ).start();
@@ -45,15 +39,15 @@ export async function generateHookFiles(
     createDirIfNotExists(hookDir);
 
     // Create index file
-    mainSpinner.text = `Creating index file for ${chalk.cyan(hookDirName)}...`;
+    mainSpinner.text = `Creating index file for ${chalk.cyan(hookName)}...`;
     fs.writeFileSync(
       path.join(hookDir, "index.ts"),
-      getIndexTemplate(hookDirName)
+      getIndexTemplate(hookName)
     );
     await new Promise((resolve) => setTimeout(resolve, 300)); // Small delay for visual effect
 
     // Create hook file
-    const hookFileName = `${hookDirName}.ts`;
+    const hookFileName = `${hookName}.ts`;
     mainSpinner.text = `Creating hook file ${chalk.cyan(hookFileName)}...`;
     fs.writeFileSync(
       path.join(hookDir, hookFileName),
@@ -62,29 +56,29 @@ export async function generateHookFiles(
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     // Create test file
-    const testFileName = `${hookDirName}.test.ts`;
+    const testFileName = `${hookName}.test.ts`;
     mainSpinner.text = `Creating test file ${chalk.cyan(testFileName)}...`;
     fs.writeFileSync(
       path.join(hookDir, testFileName),
-      getTestTemplate(hookName, hookDirName)
+      getTestTemplate(hookName)
     );
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     // Create story file
-    const storyFileName = `${hookDirName}.stories.tsx`;
+    const storyFileName = `${hookName}.stories.tsx`;
     mainSpinner.text = `Creating story file ${chalk.cyan(storyFileName)}...`;
     fs.writeFileSync(
       path.join(hookDir, storyFileName),
-      getStoryTemplate(hookName, hookDirName)
+      getStoryTemplate(hookName)
     );
     await new Promise((resolve) => setTimeout(resolve, 300));
 
     // Create MDX file
-    const mdxFileName = `${hookDirName}.mdx`;
+    const mdxFileName = `${hookName}.mdx`;
     mainSpinner.text = `Creating docs file ${chalk.cyan(mdxFileName)}...`;
     fs.writeFileSync(
       path.join(hookDir, mdxFileName),
-      getMdxTemplate(hookName, description, hookDirName)
+      getMdxTemplate(hookName, description)
     );
     await new Promise((resolve) => setTimeout(resolve, 300));
 

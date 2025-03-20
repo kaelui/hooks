@@ -13,16 +13,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 /**
- * Converts camelCase to kebab-case
- *
- * @param {string} str - String to convert
- * @returns {string} - Converted string
- */
-function camelToKebabCase(str) {
-  return str.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`);
-}
-
-/**
  * Main function to create hooks
  */
 const createHook = async () => {
@@ -48,13 +38,12 @@ const createHook = async () => {
     message: "Enter a brief description for the hook:",
   });
 
-  const hookDirName = camelToKebabCase(hookName);
-  const hookDir = path.join(__dirname, "..", "src", hookDirName);
+  const hookDir = path.join(__dirname, "..", "src", hookName);
   const readmePath = path.join(__dirname, "..", "README.md");
 
   try {
     // Generate all hook files
-    await generateHookFiles(hookDir, hookName, hookDirName, description);
+    await generateHookFiles(hookDir, hookName, description);
 
     // Update README.md
     await updateReadme(readmePath, hookName, description);
@@ -62,7 +51,7 @@ const createHook = async () => {
     console.log(
       chalk.bold.green(`\n🎉 Successfully created ${chalk.cyan(hookName)}!`)
     );
-    console.log(chalk.dim(`\nLocation: ${hookDir}/${hookDirName}.ts\n`));
+    console.log(chalk.dim(`\nLocation: ${hookDir}/${hookName}.ts\n`));
   } catch {
     logger.error("Error creating hook");
     process.exit(1);
