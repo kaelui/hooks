@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { useDisclosure } from "./use-disclosure";
+import { useDisclosure } from "./useDisclosure";
 
 const meta = {
   title: "useDisclosure",

@@ -1,5 +1,5 @@
 import { act, renderHook } from "@testing-library/react";
-import { useDisclosure } from "./use-disclosure";
+import { useDisclosure } from "./useDisclosure";
 
 describe("useDisclosure", () => {
   it("handles close correctly", () => {
