@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.2.2 - 2025-03-23
+
+### 🚀 Features
+
+- feat: rename use-disclosure to useDisclosure - [Commit](https://github.com/kaelui/hooks/commit/a59ddebcce91f208cd707e0d1c7cf56ac69dad64)
+- feat: rename use-media-query to useMediaQuery - [Commit](https://github.com/kaelui/hooks/commit/3539989447faf209ba03e3490cf6fcd78e0e6444)
+- feat: rename use-mounted to useMounted - [Commit](https://github.com/kaelui/hooks/commit/60aa5fbda41487df50398e01e68a510e526cc606)
+- feat: migrate useResizeObserver to new naming convention - [Commit](https://github.com/kaelui/hooks/commit/ff84cea24032c5e872931f49130d1e2f47f058e3)
+- feat: add useLogger and useDidUpdate hooks with documentation and tests - [Commit](https://github.com/kaelui/hooks/commit/e31e4e69c65059521a0d41a1b5570307080e80a1)
+- feat: add index.ts update functionality for new hook exports - [Commit](https://github.com/kaelui/hooks/commit/6c044188d588776722138e1a239005c982594db7)
+
+### 🧰 Tooling
+
+- refactor: simplify hook creation by removing unnecessary kebab-case conversion - [Commit](https://github.com/kaelui/hooks/commit/4025e396fe57fd7c77defa641a35167403a27888)
+
 ## 0.2.1 - 2025-03-19
 
 ### 🚀 Features
