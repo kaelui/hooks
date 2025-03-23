@@ -6,6 +6,7 @@ import chalk from "chalk";
 
 import { generateHookFiles } from "./file-generator.mjs";
 import { updateReadme } from "./readme-updater.mjs";
+import { updateIndex } from "./updateIndex.mjs";
 import logger from "./logger.mjs";
 
 // Get __dirname equivalent in ESM
@@ -40,6 +41,7 @@ const createHook = async () => {
 
   const hookDir = path.join(__dirname, "..", "src", hookName);
   const readmePath = path.join(__dirname, "..", "README.md");
+  const indexPath = path.join(__dirname, "..", "src", "index.ts");
 
   try {
     // Generate all hook files
@@ -47,6 +49,9 @@ const createHook = async () => {
 
     // Update README.md
     await updateReadme(readmePath, hookName, description);
+
+    // Update index.ts
+    await updateIndex(indexPath, hookName);
 
     console.log(
       chalk.bold.green(`\n🎉 Successfully created ${chalk.cyan(hookName)}!`)
