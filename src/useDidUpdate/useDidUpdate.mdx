@@ -1,0 +1,51 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as useDidUpdateStory from "./useDidUpdate.stories";
+
+<Meta of={useDidUpdateStory} />
+
+# `useDidUpdate`
+
+Calls given function in useEffect when value changes, but not when the component mounts
+
+## Features
+
+- Skips execution on initial component render
+- Works similar to componentDidUpdate from class components
+- Supports dependency array like useEffect
+- Automatically cleans up when component unmounts
+
+## Parameters
+
+- `fn` (required): The effect callback function to execute after the component updates
+- `dependencies` (optional): An array of dependencies that trigger the effect when changed
+
+## Returns
+
+This hook doesn't return any value (void).
+
+## Example Usage
+
+```jsx
+function Example() {
+  const [count, setCount] = useState(0);
+
+  useDidUpdate(() => {
+    console.log("Count changed:", count);
+    // This effect runs only when count changes, not on initial render
+
+    // You can return a cleanup function just like in useEffect
+    return () => {
+      console.log("Cleaning up previous effect");
+    };
+  }, [count]);
+
+  return (
+    <div>
+      <p>Current count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
+```
+
+<Canvas of={useDidUpdateStory.Primary} />

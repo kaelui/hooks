@@ -1,0 +1,41 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as useLoggerStory from "./useLogger.stories";
+
+<Meta of={useLoggerStory} />
+
+# `useLogger`
+
+A custom hook for component lifecycle logging. Logs when a component is mounted, updated, and unmounted.
+
+## Features
+
+- Logs component mount with component name and props
+- Logs component updates with component name and props
+- Logs component unmount with component name
+- Helps with debugging component lifecycle and prop changes
+
+## Parameters
+
+- `componentName` (required): The name of the component to be used in log messages
+- `props` (required): An array of props or values to be logged on mount and updates
+
+## Returns
+
+Always returns `null`.
+
+## Example Usage
+
+```jsx
+function Example({ id, name }) {
+  useLogger("Example", [id, name]);
+
+  return (
+    <div>
+      <h1>{name}</h1>
+      <p>ID: {id}</p>
+    </div>
+  );
+}
+```
+
+<Canvas of={useLoggerStory.Primary} />

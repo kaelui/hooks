@@ -18,6 +18,8 @@ pnpm add @kaelui/hooks
 - [useResizeObserver](https://kaelui.github.io/hooks/?path=/docs/useresizeobserver--docs/): uses `ResizeObserver` to track changes in element dimensions.
 - [useMediaQuery](https://kaelui.github.io/hooks/?path=/docs/usemediaquery--docs/): subscribe and respond to media query changes.
 - [useMounted](https://kaelui.github.io/hooks/?path=/docs/usemounted--docs/): returns `true` if component is mounted.
+- [useDidUpdate](https://kaelui.github.io/hooks/?path=/docs/usedidupdate--docs/): executes a callback function when dependencies change, but skips the initial mount effect.
+- [useLogger](https://kaelui.github.io/hooks/?path=/docs/uselogger--docs/): automatically logs specified values to the console on each component render for debugging.
 
 ## 🧑🏽‍💻 Development
 
