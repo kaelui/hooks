@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { useMounted } from "./use-mounted";
+import { useMounted } from "./useMounted";
 
 const meta = {
   title: "useMounted",

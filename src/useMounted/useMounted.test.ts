@@ -1,5 +1,5 @@
 import { renderHook } from "@testing-library/react";
-import { useMounted } from "./use-mounted";
+import { useMounted } from "./useMounted";
 
 describe("useMounted", () => {
   it("should return true after component renders", () => {
