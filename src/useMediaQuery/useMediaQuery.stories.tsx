@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { useMediaQuery } from "./use-media-query";
+import { useMediaQuery } from "./useMediaQuery";
 
 const meta = {
   title: "useMediaQuery",

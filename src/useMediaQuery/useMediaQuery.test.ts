@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { page } from "@vitest/browser/context";
 import { renderHook, act } from "@testing-library/react";
-import { useMediaQuery } from "./use-media-query";
+import { useMediaQuery } from "./useMediaQuery";
 
 describe("useMediaQuery", () => {
   it("should initialize correctly with default options", () => {
