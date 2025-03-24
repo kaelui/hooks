@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.2.3 - 2025-03-24
+
+### 🐛 Fixes
+
+- fix: update package.json to use wildcard for use-* paths - [Commit](https://github.com/kaelui/hooks/commit/269bbe681e8c3cf1ad8fe58963adb07a494cbbe1)
+
 ## 0.2.2 - 2025-03-23
 
 ### 🚀 Features
