@@ -11,10 +11,10 @@
       "import": "./dist/index.mjs",
       "require": "./dist/index.js"
     },
-    "./use-*": {
-      "types": "./dist/use-*/use-*.d.ts",
-      "import": "./dist/use-*/use-*.mjs",
-      "require": "./dist/use-*/use-*.js"
+    "./use*": {
+      "types": "./dist/use*/use*.d.ts",
+      "import": "./dist/use*/use*.mjs",
+      "require": "./dist/use*/use*.js"
     },
     "./package.json": "./package.json"
   },
