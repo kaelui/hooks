@@ -8,6 +8,25 @@ This library provides a set of custom React hooks that help simplify common patt
 
 ## 📦 Install
 
+> **Note**: This package is currently only available via GitHub Packages.
+
+### Setting up GitHub Packages access
+
+1. Generate a GitHub personal access token with `read:packages` scope:
+
+   - Go to GitHub Settings → [Personal Access Tokens](https://github.com/settings/tokens)
+   - Generate a new token with at least the `read:packages` permission
+   - Copy the token value
+
+2. Create or update your `.npmrc` file in your project root or home directory:
+
+```
+@kaelui:registry=https://npm.pkg.github.com
+//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
+```
+
+3. Install the package:
+
 ```bash
 pnpm add @kaelui/hooks
 ```
