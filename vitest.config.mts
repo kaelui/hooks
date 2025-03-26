@@ -1,4 +1,22 @@
 import { defineConfig } from "vitest/config";
+import type { BrowserCommand } from "vitest/node";
+import { Page } from "playwright";
+
+declare module "vitest/node" {
+  interface BrowserCommandContext {
+    page: Page;
+  }
+}
+
+const emulateReducedMotion: BrowserCommand<
+  [reducedMotion: "reduce" | "no-preference" | null]
+> = async ({ page, provider }, reducedMotion) => {
+  if (provider.name !== "playwright") {
+    throw new Error(`provider ${provider.name} is not supported`);
+  }
+
+  await page.emulateMedia({ reducedMotion });
+};
 
 export default defineConfig({
   test: {
@@ -20,6 +38,9 @@ export default defineConfig({
       instances: [{ browser: "chromium" }, { browser: "webkit" }],
       headless: true,
       screenshotFailures: false,
+      commands: {
+        emulateReducedMotion,
+      },
     },
     includeTaskLocation: true,
   },

@@ -40,6 +40,7 @@ pnpm add @kaelui/hooks
 - [useDidUpdate](https://kaelui.github.io/hooks/?path=/docs/usedidupdate--docs/): executes a callback function when dependencies change, but skips the initial mount effect.
 - [useLogger](https://kaelui.github.io/hooks/?path=/docs/uselogger--docs/): automatically logs specified values to the console on each component render for debugging.
 - [useWindowEvent](https://kaelui.github.io/hooks/?path=/docs/usewindowevent--docs/): adds an event listener to the window object.
+- [useReducedMotion](https://kaelui.github.io/hooks/?path=/docs/usereducedmotion--docs/): detects if the user has requested reduced motion.
 
 ## 🧑🏽‍💻 Development
 
