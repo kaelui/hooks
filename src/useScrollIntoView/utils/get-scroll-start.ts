@@ -19,7 +19,7 @@ export const getScrollStart = ({
   axis: "x" | "y";
   /** The parent element to get the scroll start from. If null, document will be used. */
   parent: HTMLElement | null;
-}) => {
+}): number => {
   if (!parent && typeof document === "undefined") {
     return 0;
   }
