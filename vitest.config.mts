@@ -1,12 +1,5 @@
 import { defineConfig } from "vitest/config";
 import type { BrowserCommand } from "vitest/node";
-import { Page } from "playwright";
-
-declare module "vitest/node" {
-  interface BrowserCommandContext {
-    page: Page;
-  }
-}
 
 const emulateReducedMotion: BrowserCommand<
   [reducedMotion: "reduce" | "no-preference" | null]
