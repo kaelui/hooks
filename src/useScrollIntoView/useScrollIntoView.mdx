@@ -1,0 +1,77 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as useScrollIntoViewStory from "./useScrollIntoView.stories";
+
+<Meta of={useScrollIntoViewStory} />
+
+# `useScrollIntoView`
+
+A React hook that smoothly scrolls an element into view with customizable animation, alignment, and other options.
+
+## Features
+
+- Scroll target element into view with customizable animation and easing
+- Support for different alignments (start, center, end)
+- Works with both window scrolling and custom scrollable containers
+- Horizontal and vertical scrolling support
+- Respects users' reduced motion preferences
+- Cancellable scroll animations
+- Configurable scroll offsets and durations
+- Special handling for list contexts to prevent content jumping
+
+## Parameters
+
+- `duration` (optional): Duration of scroll animation in milliseconds (default: 1250)
+- `axis` (optional): Scroll axis, either "x" or "y" (default: "y")
+- `onScrollFinish` (optional): Callback function that fires when scrolling completes
+- `easing` (optional): Custom mathematical easing function (default: easeInOutQuad)
+- `offset` (optional): Additional distance in pixels between the nearest edge and element (default: 0)
+- `cancelable` (optional): Whether animation can be interrupted by user scrolling (default: true)
+- `isList` (optional): Prevents content jumping in scrollable lists with multiple targets (default: false)
+
+## Returns
+
+Object with the following properties:
+
+- `scrollableRef`: React ref for the scrollable container (parent)
+- `targetRef`: React ref for the element to scroll into view
+- `scrollIntoView`: Function to trigger scrolling with optional alignment parameter
+- `cancel`: Function to cancel ongoing scroll animation
+
+## Example Usage
+
+```jsx
+function Example() {
+  const { scrollIntoView, targetRef, scrollableRef } = useScrollIntoView({
+    offset: 60,
+    duration: 1000,
+    axis: "y",
+  });
+
+  return (
+    <div ref={scrollableRef} style={{ height: "100vh", overflow: "auto" }}>
+      {/* Content above */}
+      <button onClick={() => scrollIntoView({ alignment: "start" })}>
+        Scroll to Element (Top)
+      </button>
+      <button onClick={() => scrollIntoView({ alignment: "center" })}>
+        Scroll to Element (Center)
+      </button>
+
+      {/* Many elements in between */}
+
+      <div
+        ref={targetRef}
+        style={{ padding: "20px", border: "2px solid blue" }}
+      >
+        This element will be scrolled into view
+      </div>
+
+      {/* Content below */}
+    </div>
+  );
+}
+```
+
+## Demo
+
+<Canvas of={useScrollIntoViewStory.BasicWindowScroll} />
