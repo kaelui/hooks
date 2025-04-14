@@ -41,7 +41,7 @@ pnpm add @kaelui/hooks
 - [useLogger](https://kaelui.github.io/hooks/?path=/docs/uselogger--docs/): automatically logs specified values to the console on each component render for debugging.
 - [useWindowEvent](https://kaelui.github.io/hooks/?path=/docs/usewindowevent--docs/): adds an event listener to the window object.
 - [useReducedMotion](https://kaelui.github.io/hooks/?path=/docs/usereducedmotion--docs/): detects if the user has requested reduced motion.
-- [useScrollIntoView](https://kaelui.github.io/hooks/?path=/docs/usescrollintoview--docs/): .
+- [useScrollIntoView](https://kaelui.github.io/hooks/?path=/docs/usescrollintoview--docs/): smoothly scrolls an element into view with customizable animation, alignment, and other options.
 
 ## 🧑🏽‍💻 Development
 
