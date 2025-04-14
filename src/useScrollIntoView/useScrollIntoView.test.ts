@@ -1,4 +1,5 @@
 import { renderHook, act } from "@testing-library/react";
+import { vi } from "vitest"; // Import vi for mocking
 import { useScrollIntoView } from "./useScrollIntoView";
 
 describe("useScrollIntoView", () => {
@@ -17,10 +18,13 @@ describe("useScrollIntoView", () => {
     targetElement.style.height = "100px";
     targetElement.style.marginTop = "300px"; // Ensure it's initially out of view
     scrollableElement.appendChild(targetElement);
+
+    vi.useFakeTimers(); // Use fake timers for controlling animation time
   });
 
   afterEach(() => {
     document.body.removeChild(scrollableElement);
+    vi.useRealTimers(); // Restore real timers after each test
   });
 
   it("should scroll to target element with default alignment (start)", () => {
@@ -163,5 +167,32 @@ describe("useScrollIntoView", () => {
       document.body.removeChild(targetElement);
       window.scrollTo(0, 0); // Clean up and reset scroll
     }, 1500);
+  });
+
+  it("should call onScrollFinish callback when scroll completes", () => {
+    const onScrollFinishMock = vi.fn();
+    const scrollDuration = 500; // Use a specific duration for the test
+    const { result } = renderHook(() =>
+      useScrollIntoView<HTMLDivElement, HTMLDivElement>({
+        onScrollFinish: onScrollFinishMock,
+        duration: scrollDuration,
+      })
+    );
+    const { scrollableRef, targetRef, scrollIntoView } = result.current;
+
+    // Set the refs
+    scrollableRef.current = scrollableElement;
+    targetRef.current = targetElement;
+
+    act(() => {
+      scrollIntoView();
+    });
+
+    // Fast-forward time past the scroll duration
+    act(() => {
+      vi.advanceTimersByTime(scrollDuration + 100); // Advance time slightly more than duration
+    });
+
+    expect(onScrollFinishMock).toHaveBeenCalledTimes(1);
   });
 });
