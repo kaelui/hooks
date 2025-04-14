@@ -33,7 +33,6 @@ export default defineConfig({
           name: "node",
           environment: "node", // Explicitly set Node environment
           include: ["src/**/*.node.test.ts"], // Only include Node-specific tests
-          // Add other Node-specific config if needed
         },
       },
       {
