@@ -1,5 +1,43 @@
 # Changelog
 
+## 0.3.0 - 2025-04-14
+
+### 🚀 Features
+
+- Add new hooks for window events, reduced motion, and smooth scrolling - [PR](https://github.com/kaelui/hooks/pull/1)
+- feat: add useScrollIntoView hook for smooth scrolling functionality - [Commit](https://github.com/kaelui/hooks/commit/e9207c9f6e9f9b345e244779f7dcd77da9a5e1f8)
+- feat: add useReducedMotion hook to detect user motion preferences - [Commit](https://github.com/kaelui/hooks/commit/99b3a1fedce39ed5d59bdc1db8ca9edbca53b5d4)
+- feat: add useWindowEvent hook for window event handling - [Commit](https://github.com/kaelui/hooks/commit/652ed923dc33150ad502ffbb14fa6ed15fcc6f2a)
+
+### 🐛 Fixes
+
+- fix: enable task location inclusion in vitest configuration - [Commit](https://github.com/kaelui/hooks/commit/1a3b0a96870ec5d993c2ed165a7b66c2c734a009)
+- fix: ensure coverage is enabled in vitest configuration - [Commit](https://github.com/kaelui/hooks/commit/9934a36180a909afa74c227666d0e5e3a636cfff)
+- fix: add return type to getScrollStart function and implement unit tests for scroll position retrieval - [Commit](https://github.com/kaelui/hooks/commit/fbf0a8c68312b92173206b600ea00007d7d97804)
+
+### 🧪 Tests
+
+- test: add unit tests for useMediaQuery behavior in Node environment and update existing tests - [Commit](https://github.com/kaelui/hooks/commit/7a8b9486c4d5b7e0acb657d12bd327f81cb68d7a)
+- test: add unit test for onScrollFinish callback in useScrollIntoView - [Commit](https://github.com/kaelui/hooks/commit/ee87de8556172bc4d91544fc7230c7857bf825f8)
+- test: add unit tests for getScrollStart function in Node environment - [Commit](https://github.com/kaelui/hooks/commit/37935ccddbe550e2e95ed95910e031cb42351572)
+- test: add unit tests for setScrollParam function in Node environment to ensure no errors with null parent - [Commit](https://github.com/kaelui/hooks/commit/a55d8ca8e338629f3745df3ceb8b3d645b2f5b6d)
+- test: add unit tests for getRelativePosition function to validate scroll position calculations - [Commit](https://github.com/kaelui/hooks/commit/5cd2c1d8d787dbc6f2035fdd3a5e2bc741428062)
+- test: add unit tests for setScrollParam function to validate scroll behavior - [Commit](https://github.com/kaelui/hooks/commit/540b6d2145f6b38121548c4a2e526df571a2367c)
+- test: enhance useScrollIntoView tests with multiple alignment scenarios and offset handling - [Commit](https://github.com/kaelui/hooks/commit/711f9e643d8de68569d0bf84087fbcca0a02c3e3)
+
+### 📝 Documentation
+
+- docs: enhance documentation for useMediaQuery hook with detailed examples - [Commit](https://github.com/kaelui/hooks/commit/bb7d48013c43a9f8779c611357f0c445969cc5a0)
+- docs: update README to include GitHub Packages access instructions - [Commit](https://github.com/kaelui/hooks/commit/6c90241ad54020feb7cd954133c6e3b86d7f9b6f)
+
+### 🔧 Maintenance
+
+- chore: update tsconfig to include vitest and tsup config files; remove unused Page import from vitest config - [Commit](https://github.com/kaelui/hooks/commit/fa864a45f90b37c9a8ccfa04e6a703aa21fc8223)
+
+### 🧰 Tooling
+
+- refactor: remove commented placeholder for additional Node-specific config in vitest configuration - [Commit](https://github.com/kaelui/hooks/commit/c0d720b509a9096622df8bf4d18bad498a7e1044)
+
 ## 0.2.3 - 2025-03-24
 
 ### 🐛 Fixes
