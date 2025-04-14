@@ -15,6 +15,7 @@ export default defineConfig({
   test: {
     globals: true,
     coverage: {
+      enabled: true,
       provider: "istanbul",
       reporter: ["html", "lcov", "text", "json"],
       include: ["src"],
