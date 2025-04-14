@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1 - 2025-04-14
+
+### 📝 Documentation
+
+- docs: update description for useScrollIntoView hook in README - [Commit](https://github.com/kaelui/hooks/commit/8da9812d82896b621a27f15eb622e4afc20f4474)
+
 ## 0.3.0 - 2025-04-14
 
 ### 🚀 Features
