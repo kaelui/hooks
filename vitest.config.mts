@@ -14,6 +14,7 @@ const emulateReducedMotion: BrowserCommand<
 export default defineConfig({
   test: {
     globals: true,
+    includeTaskLocation: true,
     coverage: {
       enabled: true,
       provider: "istanbul",
@@ -26,16 +27,33 @@ export default defineConfig({
         "**/*.story.*",
       ],
     },
-    browser: {
-      enabled: true,
-      provider: "playwright",
-      instances: [{ browser: "chromium" }, { browser: "webkit" }],
-      headless: true,
-      screenshotFailures: false,
-      commands: {
-        emulateReducedMotion,
+    workspace: [
+      {
+        test: {
+          name: "node",
+          environment: "node", // Explicitly set Node environment
+          include: ["src/**/*.node.test.ts"], // Only include Node-specific tests
+          // Add other Node-specific config if needed
+        },
       },
-    },
-    includeTaskLocation: true,
+      {
+        extends: true,
+        test: {
+          name: "browser",
+          include: ["src/**/*.test.ts", "src/**/*.spec.ts"],
+          exclude: ["**/*.node.test.ts"], // Exclude Node-specific tests
+          browser: {
+            enabled: true,
+            provider: "playwright",
+            instances: [{ browser: "chromium" }, { browser: "webkit" }],
+            headless: true,
+            screenshotFailures: false,
+            commands: {
+              emulateReducedMotion,
+            },
+          },
+        },
+      },
+    ],
   },
 });
