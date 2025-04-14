@@ -15,7 +15,7 @@ function attachMediaListener(
   return () => query.removeEventListener("change", callback);
 }
 
-function getInitialValue(query: string, initialValue?: boolean) {
+export function getInitialValue(query: string, initialValue?: boolean) {
   if (typeof initialValue === "boolean") {
     return initialValue;
   }
@@ -27,6 +27,26 @@ function getInitialValue(query: string, initialValue?: boolean) {
   return false;
 }
 
+/**
+ * A hook that returns a boolean indicating whether the provided media query matches.
+ *
+ * @param query - The media query to check.
+ * @param initialValue - Optional initial value for the matches state. Useful for server-side rendering.
+ * @param options - Hook configuration options.
+ * @param options.getInitialValueInEffect - Whether to get the initial value in the effect. Default is `true`.
+ * @returns A boolean indicating whether the media query matches.
+ *
+ * @example
+ * ```tsx
+ * const isMobile = useMediaQuery('(max-width: 768px)');
+ *
+ * if (isMobile) {
+ *   return <MobileView />;
+ * }
+ *
+ * return <DesktopView />;
+ * ```
+ */
 export function useMediaQuery(
   query: string,
   initialValue?: boolean,

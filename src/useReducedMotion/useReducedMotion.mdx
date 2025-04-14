@@ -1,0 +1,46 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as useReducedMotionStory from "./useReducedMotion.stories";
+
+<Meta of={useReducedMotionStory} />
+
+# `useReducedMotion`
+
+A hook that detects if the user has requested reduced motion on their device. This is useful for creating accessible animations that respect user preferences.
+
+## Features
+
+- Detects the user's motion preference via CSS media query
+- Supports SSR with optional initial value
+- Updates reactively when user preferences change
+- Configurable with options for initialization behavior
+
+## Parameters
+
+- `initialValue` (optional): Default state before the media query is evaluated. Useful for SSR.
+- `options` (optional): Configuration object passed to the underlying `useMediaQuery` hook
+
+## Returns
+
+A boolean indicating whether reduced motion is preferred (`true`) or not (`false`).
+
+## Example Usage
+
+```jsx
+function AnimatedComponent() {
+  const prefersReducedMotion = useReducedMotion();
+
+  return (
+    <div
+      className={
+        prefersReducedMotion ? "simple-transition" : "elaborate-animation"
+      }
+    >
+      {prefersReducedMotion
+        ? "Using simplified animation for accessibility"
+        : "Using standard animation"}
+    </div>
+  );
+}
+```
+
+<Canvas of={useReducedMotionStory.Primary} />

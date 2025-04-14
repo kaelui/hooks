@@ -4,3 +4,6 @@ export * from "#useMediaQuery";
 export * from "#useMounted";
 export * from "#useLogger";
 export * from "#useDidUpdate";
+export * from "#useWindowEvent";
+export * from "#useReducedMotion";
+export * from "#useScrollIntoView";

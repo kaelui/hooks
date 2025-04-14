@@ -1,0 +1,50 @@
+import { Canvas, Meta } from "@storybook/blocks";
+import * as useWindowEventStory from "./useWindowEvent.stories";
+
+<Meta of={useWindowEventStory} />
+
+# `useWindowEvent`
+
+A React hook that adds an event listener to the window object and automatically cleans it up when the component unmounts.
+
+## Features
+
+- Type-safe event handling with TypeScript overloads
+- Automatic cleanup of event listeners on component unmount
+- Support for all standard window events
+- Support for custom events
+- Works with event listener options (capture, passive, once)
+
+## Parameters
+
+- `type` (required): The event type to listen for (e.g., 'resize', 'scroll', 'click')
+- `listener` (required): The callback function that handles the event
+- `options` (optional): A boolean indicating whether events should be captured in the capture phase, or an options object
+
+## Returns
+
+Void - This hook doesn't return any value.
+
+## Example Usage
+
+```jsx
+import { useWindowEvent } from "./useWindowEvent";
+
+function Example() {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useWindowEvent("resize", () => {
+    setWindowWidth(window.innerWidth);
+  });
+
+  useWindowEvent("keydown", (event) => {
+    if (event.key === "Escape") {
+      console.log("Escape key pressed");
+    }
+  });
+
+  return <div>Current window width: {windowWidth}px</div>;
+}
+```
+
+<Canvas of={useWindowEventStory.Primary} />
