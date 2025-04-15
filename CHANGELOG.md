@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.2 - 2025-04-15
+
+### 🔧 Maintenance
+
+- chore: update dependencies to latest versions - [Commit](https://github.com/kaelui/hooks/commit/663000c6ea01a9e0d836e99b54af26c32b4c962e)
+- chore: upgrade dependencies - [Commit](https://github.com/kaelui/hooks/commit/9760eba29d041177e688f0a26b3ba257b90e410b)
+
 ## 0.3.1 - 2025-04-14
 
 ### 📝 Documentation
