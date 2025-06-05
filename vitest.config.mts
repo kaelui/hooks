@@ -27,7 +27,7 @@ export default defineConfig({
         "**/*.story.*",
       ],
     },
-    workspace: [
+    projects: [
       {
         test: {
           name: "node",
