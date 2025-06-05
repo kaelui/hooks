@@ -60,7 +60,7 @@ describe("${hookName}", () => {
  */
 export const getStoryTemplate = (
   hookName
-) => `import type { Meta, StoryObj } from "@storybook/react";
+) => `import type { Meta, StoryObj } from "@storybook/react-vite";
 import { ${hookName} } from "./${hookName}";
 
 const meta = {
@@ -94,7 +94,7 @@ export const Primary: Story = {
 export const getMdxTemplate = (
   hookName,
   description
-) => `import { Canvas, Meta } from "@storybook/blocks";
+) => `import { Canvas, Meta } from "@storybook/addon-docs/blocks";
 import * as ${hookName}Story from "./${hookName}.stories";
 
 <Meta of={${hookName}Story} />

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from "@storybook/react";
+import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useReducedMotion } from "./useReducedMotion";
 import { useState, useEffect } from "react";
 
