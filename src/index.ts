@@ -7,3 +7,4 @@ export * from "#useDidUpdate";
 export * from "#useWindowEvent";
 export * from "#useReducedMotion";
 export * from "#useScrollIntoView";
+export * from "#useLongPress";

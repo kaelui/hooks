@@ -13,7 +13,6 @@ This library provides a set of custom React hooks that help simplify common patt
 ### Setting up GitHub Packages access
 
 1. Generate a GitHub personal access token with `read:packages` scope:
-
    - Go to GitHub Settings → [Personal Access Tokens](https://github.com/settings/tokens)
    - Generate a new token with at least the `read:packages` permission
    - Copy the token value
@@ -42,6 +41,7 @@ pnpm add @kaelui/hooks
 - [useWindowEvent](https://kaelui.github.io/hooks/?path=/docs/usewindowevent--docs/): adds an event listener to the window object.
 - [useReducedMotion](https://kaelui.github.io/hooks/?path=/docs/usereducedmotion--docs/): detects if the user has requested reduced motion.
 - [useScrollIntoView](https://kaelui.github.io/hooks/?path=/docs/usescrollintoview--docs/): smoothly scrolls an element into view with customizable animation, alignment, and other options.
+- [useLongPress](https://kaelui.github.io/hooks/?path=/docs/uselongpress--docs/): detects long press gestures on mouse and touch events with customizable threshold and callbacks.
 
 ## 🧑🏽‍💻 Development
 
