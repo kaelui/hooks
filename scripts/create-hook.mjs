@@ -6,7 +6,7 @@ import chalk from "chalk";
 
 import { generateHookFiles } from "./file-generator.mjs";
 import { updateReadme } from "./readme-updater.mjs";
-import { updateIndex } from "./updateIndex.mjs";
+import { updateIndex } from "./update-index.mjs";
 import logger from "./logger.mjs";
 
 // Get __dirname equivalent in ESM
