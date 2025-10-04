@@ -27,7 +27,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22.x"
 
       # We don't need to install dependencies since we're only publishing
       # the pre-built artifacts created in the build-test job
