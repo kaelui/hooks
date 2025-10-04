@@ -94,5 +94,9 @@
   },
   "peerDependencies": {
     "react": "^19.0.0"
+  },
+  "engines": {
+    "node": "22.x",
+    "pnpm": ">=10"
   }
 }
