@@ -83,7 +83,7 @@
     "globals": "16.5.0",
     "ora": "9.0.0",
     "playwright": "1.57.0",
-    "prettier": "3.6.2",
+    "prettier": "3.7.3",
     "prompts": "2.4.2",
     "react": "19.2.0",
     "storybook": "9.1.15",
