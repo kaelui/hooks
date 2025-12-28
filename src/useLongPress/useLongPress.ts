@@ -63,7 +63,7 @@ export function useLongPress(
   const { threshold = 400, onStart, onFinish, onCancel } = options;
   const isLongPressActive = React.useRef(false);
   const isPressed = React.useRef(false);
-  const timerId = React.useRef<NodeJS.Timeout | null>(null);
+  const timerId = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Cleanup timer on unmount
   React.useEffect(() => {
