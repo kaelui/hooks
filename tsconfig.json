@@ -15,7 +15,7 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-    "types": ["vitest/globals", "@vitest/browser/providers/playwright"],
+    "types": ["vitest/globals"],
     "allowJs": true,
     "checkJs": true,
     "outDir": "./dist",

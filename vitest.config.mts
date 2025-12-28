@@ -1,15 +1,15 @@
 import { defineConfig } from "vitest/config";
-import type { BrowserCommand } from "vitest/node";
+import { playwright, defineBrowserCommand } from "@vitest/browser-playwright";
 
-const emulateReducedMotion: BrowserCommand<
+const emulateReducedMotion = defineBrowserCommand<
   [reducedMotion: "reduce" | "no-preference" | null]
-> = async ({ page, provider }, reducedMotion) => {
+>(async ({ page, provider }, reducedMotion) => {
   if (provider.name !== "playwright") {
     throw new Error(`provider ${provider.name} is not supported`);
   }
 
   await page.emulateMedia({ reducedMotion });
-};
+});
 
 export default defineConfig({
   test: {
@@ -25,6 +25,7 @@ export default defineConfig({
         "**/*.spec.ts",
         "**/*.stories.*",
         "**/*.story.*",
+        "**/*.mdx",
       ],
     },
     projects: [
@@ -43,7 +44,11 @@ export default defineConfig({
           exclude: ["**/*.node.test.ts"], // Exclude Node-specific tests
           browser: {
             enabled: true,
-            provider: "playwright",
+            provider: playwright({
+              launchOptions: {
+                slowMo: 100,
+              },
+            }),
             instances: [{ browser: "chromium" }, { browser: "webkit" }],
             headless: true,
             screenshotFailures: false,
