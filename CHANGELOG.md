@@ -1,5 +1,72 @@
 # Changelog
 
+## 0.3.3 - 2026-01-10
+
+### 🚀 Features
+
+- feat: add updateIndex function to manage hook exports in index.ts - [Commit](https://github.com/kaelui/hooks/commit/6c5d9dfaad2feb2db80378a1de9afe79e7586e51)
+- feat: add useLongPress hook with customizable long press detection and event handling - [Commit](https://github.com/kaelui/hooks/commit/4cf14d50e91aca91f1e8e9824f51b93015f9e11b)
+
+### 🐛 Fixes
+
+- fix: update Codecov action to version 5 - [Commit](https://github.com/kaelui/hooks/commit/411fea62152cf0d4819af752627351fe4f93fb1f)
+- fix: update ora dependency to version 9.0.0 - [Commit](https://github.com/kaelui/hooks/commit/d5508bc46ab77d05f9df89d736dee9ac3645c121)
+- fix: update @types/node to version 24.3.0 - [Commit](https://github.com/kaelui/hooks/commit/3cd073856240c919c4dcad3c80f8347f3680a8d6)
+- fix: update package manager version and enhance Storybook configuration - [Commit](https://github.com/kaelui/hooks/commit/3ce3b498d35207c8b9bcd37cb39b84be057e0e89)
+- fix: update devDependencies to use exact versions for consistency - [Commit](https://github.com/kaelui/hooks/commit/e8957d4a2c52c5f66263763032179440dcbc1003)
+- fix: correct configuration key from 'workspace' to 'projects' in vitest config - [Commit](https://github.com/kaelui/hooks/commit/d98c9e20aac0a919da8313f35826011ecbade9db)
+
+### 🔧 Maintenance
+
+- chore: update Storybook, ESLint, and TypeScript dependencies to latest versions - [Commit](https://github.com/kaelui/hooks/commit/9bbcb7f42044d0f86ca8c73f0146f5e871ee038e)
+- chore: update timerId type to use ReturnType for better type safety - [Commit](https://github.com/kaelui/hooks/commit/ed6e82785401b1264aa26c6204d4a5d000564b8d)
+- chore: update Storybook and Vitest dependencies, and refine Vitest configuration - [Commit](https://github.com/kaelui/hooks/commit/5a08eebe91988ae16891a293d578afc6ef3f24ef)
+- chore: format conditional statement for better readability in CI workflow - [Commit](https://github.com/kaelui/hooks/commit/44059d058a535a2f4af64ed03e93d77799a40355)
+- chore: update @types/node to version 25.0.3 - [Commit](https://github.com/kaelui/hooks/commit/3f50fc746e47f84f99120d3444293b76e435e094)
+- chore: update devDependencies to latest versions - [Commit](https://github.com/kaelui/hooks/commit/7db80653befc8d15920010c5f12e32d6339d5dcf)
+- chore: add postinstall script to install Playwright dependencies - [Commit](https://github.com/kaelui/hooks/commit/16b6e4280f3dbbc9f877e04c2d7618044b6ffc19)
+- chore: update peerDependencies for react and add react-dom - [Commit](https://github.com/kaelui/hooks/commit/ad822557f7bf16c62c34bfa57a4112d5adcdda67)
+- chore: add react-dom as a dependency - [Commit](https://github.com/kaelui/hooks/commit/4024f36994c197ec0cd5b192e333cb00c50d81f4)
+- chore: update prettier, react, and typescript-eslint to latest versions - [Commit](https://github.com/kaelui/hooks/commit/370d3a754615cdd07694c149153687c62cabb59d)
+- chore: update prettier to version 3.7.3 - [Commit](https://github.com/kaelui/hooks/commit/436889d64cb9476e59644f621d66d78f630d971a)
+- chore: update @types/react, playwright, and typescript-eslint to latest versions; add pnpm-workspace.yaml - [Commit](https://github.com/kaelui/hooks/commit/c3e0f8d312a76b1e653584f3e69d30c463956fb8)
+- chore: update @types/node, @types/react, @vitejs/plugin-react, tsup, and typescript-eslint to latest versions - [Commit](https://github.com/kaelui/hooks/commit/d1f5659b957dc68fdfc263dd333568040996ad28)
+- chore: update devDependencies to latest versions - [Commit](https://github.com/kaelui/hooks/commit/601ecc46f06d46024c4a996266e8fb58170b80b8)
+- chore: update @eslint/js, @types/node, eslint, and globals to latest versions - [Commit](https://github.com/kaelui/hooks/commit/6682b74d5857fd1329bf177ad6090a92c9d451fd)
+- chore: update Storybook and Vite dependencies to latest versions - [Commit](https://github.com/kaelui/hooks/commit/deba4caeb3c805e2179c8aa2dfa347e3f027f868)
+- chore: update devDependencies to latest versions - [Commit](https://github.com/kaelui/hooks/commit/b777b3df310558c0d8d35f51653d956bf740ea49)
+- chore: update devDependencies to latest versions - [Commit](https://github.com/kaelui/hooks/commit/c45a50d5771bf2327f398a6485d18a0a44de63c5)
+- chore: specify Node.js and pnpm versions in engines field - [Commit](https://github.com/kaelui/hooks/commit/302e54d572c74cb28f4ed16070d23c426fbe9c85)
+- chore: update Node.js version to 22.x in CI workflows - [Commit](https://github.com/kaelui/hooks/commit/fcc7f3c41c7454fc7cbc06f737330b1017eb83b7)
+- chore: update packageManager version to pnpm@10.18.0 - [Commit](https://github.com/kaelui/hooks/commit/a35f7a46a26f8bd1bb18fdb12c1dee66556dc853)
+- chore: update @types/react and @vitejs/plugin-react to latest versions - [Commit](https://github.com/kaelui/hooks/commit/ce43dc8dd901b7af4a8dbd85083f39de16e08396)
+- chore: add a blank line for better readability in deploy-storybook.yml - [Commit](https://github.com/kaelui/hooks/commit/3a59fd947a764d030e6635371ee61e14e63d8a26)
+- chore: update Node.js version to 22.x in CI workflow - [Commit](https://github.com/kaelui/hooks/commit/19b9503b4ae12573d133b1119862dc260fee1f1d)
+- chore: update @storybook and typescript dependencies to latest versions - [Commit](https://github.com/kaelui/hooks/commit/745e9f2a2e574a2b9628bf6c59e731fbdc66d432)
+- chore: update packageManager version to pnpm@10.17.1 - [Commit](https://github.com/kaelui/hooks/commit/326804e20caddfd28db80a3ac3abb072aa62a037)
+- chore: update devDependencies for eslint, storybook, types, and other packages - [Commit](https://github.com/kaelui/hooks/commit/a4063d1890db1533accc6190805f08cb43bd8738)
+- chore: update dependencies for @vitejs/plugin-react, chalk, and typescript-eslint - [Commit](https://github.com/kaelui/hooks/commit/793f6e3615fb6df07cf099083207e15aacc28270)
+- chore: update packages - [Commit](https://github.com/kaelui/hooks/commit/fccf06756631b1665eb6194338de6082fdd00367)
+- chore: update packages - [Commit](https://github.com/kaelui/hooks/commit/19dde0fd6b575b037ac9b532cb9c62f07685f915)
+- chore: update packages - [Commit](https://github.com/kaelui/hooks/commit/b4c7d2eeadacba1831e26b896b38b86f8e6c95c2)
+- chore: update packages - [Commit](https://github.com/kaelui/hooks/commit/f1839059eb8f9da5084904f9c6c0c671c53ea9f1)
+- chore: update @types/react to version 19.1.6 - [Commit](https://github.com/kaelui/hooks/commit/cab09a087b28b7fc711375a94293d1179bc35ced)
+- chore: update @vitejs/plugin-react to version 4.5.0 and globals to version 16.2.0 - [Commit](https://github.com/kaelui/hooks/commit/de165ca769048b6f08582f2cbeac260ebc8396b1)
+- chore: update packages - [Commit](https://github.com/kaelui/hooks/commit/74a83fcaa633c5294a9c68df504671ad5a4878de)
+- chore: update packages - [Commit](https://github.com/kaelui/hooks/commit/3a8d1f994fc8cf3346f7d667835b597de0b56b00)
+- chore: update @types/node to version 22.15.18 - [Commit](https://github.com/kaelui/hooks/commit/7f6f296a902b6732f1c3414a52f92f1894a8bd39)
+- chore: update @types/react and typescript-eslint to latest versions - [Commit](https://github.com/kaelui/hooks/commit/79d268031f83d874250079299b9907276c2f5b91)
+- chore: update eslint-config-prettier to version 10.1.5 - [Commit](https://github.com/kaelui/hooks/commit/fc960b19afca4d22f902d8a5b63e64662b89467c)
+- chore: update @types/node, eslint-config-prettier, and globals to latest versions - [Commit](https://github.com/kaelui/hooks/commit/4a8056f0af3189bfe26a26800e2d1fa6a501b98d)
+- chore: update packages - [Commit](https://github.com/kaelui/hooks/commit/83315873a9a5372925b5c5c5f4c2054fc2df5a77)
+- chore: update packages - [Commit](https://github.com/kaelui/hooks/commit/63b182b25a19f4131eb50e7a4dc8e536d2efc546)
+- chore: update eslint and vitejs/plugin-react to latest versions - [Commit](https://github.com/kaelui/hooks/commit/e290a5850aabcba086b05001ff8939de0f87dab7)
+- chore: update playwright to version 1.52.0 - [Commit](https://github.com/kaelui/hooks/commit/2c6662e4f23016aaf50a58206c18892b82003076)
+
+### 🧰 Tooling
+
+- refactor: update Storybook imports to use @storybook/react-vite and @storybook/addon-docs - [Commit](https://github.com/kaelui/hooks/commit/36565d811a8ac294462c7f3f1fa00f4c14712720)
+
 ## 0.3.2 - 2025-04-15
 
 ### 🔧 Maintenance
