@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { useWindowEvent } from "./useWindowEvent";
 import { useState } from "react";
 import { action } from "storybook/actions";
+import { useWindowEvent } from "./useWindowEvent";
 
 const meta = {
   title: "useWindowEvent",

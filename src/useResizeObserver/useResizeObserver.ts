@@ -61,6 +61,7 @@ export const useResizeObserver = <T extends HTMLElement = HTMLElement>(
     });
   }, []);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: "We intentionally want to observe the element whenever the ref changes, and we want to ensure that the observer is properly cleaned up on unmount. The observer instance itself is memoized and won't change, so we don't need to include it in the dependencies."
   useEffect(() => {
     if (ref.current) {
       observer?.observe(ref.current, options);

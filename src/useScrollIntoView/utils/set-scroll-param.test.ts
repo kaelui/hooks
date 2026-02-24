@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, vi, afterEach } from "vitest"; // Import afterEach
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest"; // Import afterEach
 import { setScrollParam } from "./set-scroll-param";
 
 // @vitest-environment jsdom

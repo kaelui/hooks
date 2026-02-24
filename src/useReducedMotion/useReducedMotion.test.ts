@@ -1,6 +1,6 @@
-import { renderHook, act } from "@testing-library/react";
-import { describe, expect, it, beforeEach } from "vitest";
+import { act, renderHook } from "@testing-library/react";
 import { commands } from "@vitest/browser/context";
+import { beforeEach, describe, expect, it } from "vitest";
 import { useReducedMotion } from "./useReducedMotion";
 
 // if you are using TypeScript, you can augment the module

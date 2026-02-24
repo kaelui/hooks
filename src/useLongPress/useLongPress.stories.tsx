@@ -205,6 +205,7 @@ export const TouchSupport: Story = {
               <em>No events yet...</em>
             ) : (
               events.map((event, index) => (
+                // biome-ignore lint/suspicious/noArrayIndexKey: "Event log is append-only and order matters, so using index as key is acceptable here"
                 <div key={index} style={{ marginBottom: "2px" }}>
                   {event}
                 </div>

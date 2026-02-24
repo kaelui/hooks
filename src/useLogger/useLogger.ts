@@ -21,6 +21,7 @@ import { useDidUpdate } from "#useDidUpdate";
  * ```
  */
 export function useLogger(componentName: string, props: unknown[]) {
+  // biome-ignore lint/correctness/useExhaustiveDependencies: "Show mount and unmount logs only once, and updates logs whenever props change"
   useEffect(() => {
     console.log(`${componentName} mounted`, ...props);
     return () => console.log(`${componentName} unmounted`);

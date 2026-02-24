@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { useDidUpdate } from "./useDidUpdate";
 import { useState } from "react";
 import { action } from "storybook/actions";
+import { useDidUpdate } from "./useDidUpdate";
 
 const meta = {
   title: "useDidUpdate",

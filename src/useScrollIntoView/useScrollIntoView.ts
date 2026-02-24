@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useReducedMotion } from "#useReducedMotion";
-import { useWindowEvent } from "#useWindowEvent";
 import { easeInOutQuad } from "#useScrollIntoView/utils/ease-in-out-quad";
 import { getRelativePosition } from "#useScrollIntoView/utils/get-relative-position";
 import { getScrollStart } from "#useScrollIntoView/utils/get-scroll-start";
 import { setScrollParam } from "#useScrollIntoView/utils/set-scroll-param";
+import { useWindowEvent } from "#useWindowEvent";
 
 interface ScrollIntoViewAnimation {
   /** Target element alignment relatively to parent based on current axis */
@@ -65,11 +65,11 @@ export function useScrollIntoView<
 
   const reducedMotion = useReducedMotion();
 
-  const cancel = (): void => {
+  const cancel = useCallback((): void => {
     if (frameID.current) {
       cancelAnimationFrame(frameID.current);
     }
-  };
+  }, []);
 
   const scrollIntoView = useCallback(
     ({ alignment = "start" }: ScrollIntoViewAnimation = {}) => {
@@ -122,7 +122,16 @@ export function useScrollIntoView<
       }
       animateScroll();
     },
-    [axis, duration, easing, isList, offset, onScrollFinish, reducedMotion]
+    [
+      axis,
+      duration,
+      easing,
+      isList,
+      offset,
+      onScrollFinish,
+      reducedMotion,
+      cancel,
+    ]
   );
 
   const handleStop = () => {
@@ -146,7 +155,7 @@ export function useScrollIntoView<
   });
 
   // Cleanup requestAnimationFrame
-  useEffect(() => cancel, []);
+  useEffect(() => cancel, [cancel]);
 
   return {
     scrollableRef,

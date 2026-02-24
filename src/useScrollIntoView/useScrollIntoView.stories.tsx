@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/suspicious/noArrayIndexKey: "The data has a consistent order and is never reordered or filtered" */
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useState } from "react";
 import { useScrollIntoView } from "./useScrollIntoView";

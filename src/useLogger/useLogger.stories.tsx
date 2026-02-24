@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
-import { useLogger } from "./useLogger";
 import { useState } from "react";
 import { action } from "storybook/actions";
+import { useLogger } from "./useLogger";
 
 const meta = {
   title: "useLogger",

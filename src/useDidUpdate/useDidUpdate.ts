@@ -1,4 +1,9 @@
-import { DependencyList, EffectCallback, useEffect, useRef } from "react";
+import {
+  type DependencyList,
+  type EffectCallback,
+  useEffect,
+  useRef,
+} from "react";
 
 /**
  * A hook that executes a callback function only after the initial render and when dependencies change.
@@ -37,5 +42,6 @@ export function useDidUpdate(
 
     mounted.current = true;
     return undefined;
+    // biome-ignore lint/correctness/useExhaustiveDependencies: "We intentionally want to allow users to omit dependencies if they choose, just like useEffect"
   }, dependencies);
 }

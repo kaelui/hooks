@@ -45,14 +45,14 @@ const getAxisData = (
   const diff = targetPosition[property] - parentPosition[property];
   const targetSize = isYAxis ? targetPosition.height : targetPosition.width;
 
-  let customParentSize;
+  let customParentSize: number;
   if (isYAxis) {
     customParentSize = parentPosition.height;
   } else {
     customParentSize = parentPosition.width;
   }
 
-  let windowSize;
+  let windowSize: number;
   if (isYAxis) {
     windowSize = window.innerHeight;
   } else {

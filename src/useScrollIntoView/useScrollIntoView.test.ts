@@ -1,4 +1,4 @@
-import { renderHook, act } from "@testing-library/react";
+import { act, renderHook } from "@testing-library/react";
 import { vi } from "vitest"; // Import vi for mocking
 import { useScrollIntoView } from "./useScrollIntoView";
 

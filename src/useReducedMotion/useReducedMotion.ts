@@ -1,4 +1,4 @@
-import { useMediaQuery, UseMediaQueryOptions } from "#useMediaQuery";
+import { type UseMediaQueryOptions, useMediaQuery } from "#useMediaQuery";
 
 /**
  * Hook that tracks the user's preference for reduced motion.

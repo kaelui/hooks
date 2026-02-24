@@ -1,6 +1,6 @@
-import { renderHook, act } from "@testing-library/react";
-import { useLongPress } from "./useLongPress";
+import { act, renderHook } from "@testing-library/react";
 import { vi } from "vitest";
+import { useLongPress } from "./useLongPress";
 
 describe("useLongPress", () => {
   beforeEach(() => {
