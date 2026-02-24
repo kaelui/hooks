@@ -39,7 +39,7 @@
     "release": "node scripts/release.mjs",
     "preversion": "pnpm test:run && pnpm build",
     "postversion": "git push && git push --tags",
-    "postinstall": "playwright install --with-deps"
+    "postinstall": "playwright install --with-deps chromium webkit"
   },
   "files": [
     "dist",

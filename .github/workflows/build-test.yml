@@ -38,10 +38,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Install Playwright browsers
-        if: ${{ inputs.test == true }}
-        run: pnpm exec playwright install --with-deps chromium webkit
-
       - name: Lint
         if: ${{ inputs.lint == true }}
         run: pnpm lint
