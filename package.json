@@ -29,7 +29,7 @@
     "dev": "storybook dev -p 6008 --no-open",
     "build": "tsup",
     "build:storybook": "storybook build",
-    "lint": "eslint --ext .ts,.tsx src",
+    "lint": "biome lint ./src",
     "format": "prettier --write src",
     "test": "vitest",
     "test:ui": "vitest --ui",
