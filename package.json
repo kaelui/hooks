@@ -65,8 +65,8 @@
   "packageManager": "pnpm@10.18.0+sha512.e804f889f1cecc40d572db084eec3e4881739f8dec69c0ff10d2d1beff9a4e309383ba27b5b750059d7f4c149535b6cd0d2cb1ed3aeb739239a4284a68f40cfa",
   "devDependencies": {
     "@biomejs/biome": "^2.4.4",
-    "@storybook/addon-docs": "10.2.11",
-    "@storybook/react-vite": "10.2.11",
+    "@storybook/addon-docs": "10.2.12",
+    "@storybook/react-vite": "10.2.12",
     "@testing-library/dom": "10.4.1",
     "@testing-library/react": "16.3.2",
     "@types/node": "25.3.0",
@@ -84,7 +84,7 @@
     "prompts": "2.4.2",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "storybook": "10.2.11",
+    "storybook": "10.2.12",
     "tsup": "8.5.1",
     "typescript": "5.9.3",
     "vitest": "4.0.18"
