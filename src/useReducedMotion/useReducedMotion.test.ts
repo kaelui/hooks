@@ -1,16 +1,14 @@
 import { act, renderHook } from "@testing-library/react";
-import { commands } from "@vitest/browser/context";
 import { beforeEach, describe, expect, it } from "vitest";
+import { commands } from "vitest/browser";
 import { useReducedMotion } from "./useReducedMotion";
 
 // if you are using TypeScript, you can augment the module
-declare module "@vitest/browser/context" {
+declare module "vitest/browser" {
   interface BrowserCommands {
     emulateReducedMotion: (
       reducedMotion: "reduce" | "no-preference" | null
-    ) => Promise<{
-      someValue: true;
-    }>;
+    ) => Promise<void>;
   }
 }
 

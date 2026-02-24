@@ -1,15 +1,16 @@
+import { playwright } from "@vitest/browser-playwright";
 import { defineConfig } from "vitest/config";
-import { playwright, defineBrowserCommand } from "@vitest/browser-playwright";
+import type { BrowserCommand } from "vitest/node";
 
-const emulateReducedMotion = defineBrowserCommand<
+const emulateReducedMotion: BrowserCommand<
   [reducedMotion: "reduce" | "no-preference" | null]
->(async ({ page, provider }, reducedMotion) => {
+> = async ({ page, provider }, reducedMotion) => {
   if (provider.name !== "playwright") {
     throw new Error(`provider ${provider.name} is not supported`);
   }
 
   await page.emulateMedia({ reducedMotion });
-});
+};
 
 export default defineConfig({
   test: {
