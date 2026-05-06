@@ -8,3 +8,4 @@ dist
 storybook-static
 
 .DS_Store
+.npmrc

@@ -17,7 +17,7 @@ This library provides a set of custom React hooks that help simplify common patt
    - Generate a new token with at least the `read:packages` permission
    - Copy the token value
 
-2. Create or update your `.npmrc` file in your project root or home directory:
+2. Create or update your `.npmrc` file in your project root directory:
 
 ```
 @kaelui:registry=https://npm.pkg.github.com
